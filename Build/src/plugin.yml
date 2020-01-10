@@ -1,0 +1,16 @@
+name: Build
+main: fr.azrock.me.Build
+version: 2.0.1
+author: Azrock
+
+commands:
+  rank:
+    description: Rank Command
+    aliases: grade
+  fly:
+    description: Fly Command
+  gamemode:
+    description: Gamemode command
+    aliases: gm
+  speed:
+    description: Speed command
