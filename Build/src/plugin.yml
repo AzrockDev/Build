@@ -11,3 +11,7 @@ commands:
     description: Fly Command
   speed:
     description: Speed command
+  help:
+    description: Help Command
+  build:
+    description: Build reload command

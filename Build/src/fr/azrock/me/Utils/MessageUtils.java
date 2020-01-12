@@ -6,9 +6,12 @@ public class MessageUtils {
 	
 	
 	public void alert(Player player, Alert alert, String msg) {
-		player.sendMessage(alert.getColor()+msg);
+		player.sendMessage(alert.toString()+msg);
 	}
 	
+	public void alert(Player player, Alert alert) {
+		player.sendMessage(alert.toString());
+	}
 	
 	
 	

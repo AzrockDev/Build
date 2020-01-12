@@ -16,7 +16,7 @@ import fr.azrock.me.Utils.MessageUtils;
 public class RankCommands extends CommandManager {
 	
 	public RankCommands() {
-		super("Rank");
+		super("Rank", 1);
 	}
 	
 	public void setupCommands() {

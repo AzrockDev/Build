@@ -49,7 +49,7 @@ public class SetCmd extends SubCommands {
 			 * else: Check for other player. */
 			if(args.length == 1) {
 
-				player.sendMessage("§aTu t'es mis le grade "+rank.getRank()+".");
+				player.sendMessage("§aTu t'es mis le grade "+rank.getRank());
 				Ranks.getInstance().setRank(player, rank);
 				return;
 				
@@ -62,7 +62,7 @@ public class SetCmd extends SubCommands {
 					return;
 				}
 
-				player.sendMessage("§aTu as mis le grade "+rank.getRank()+" §aà "+target.getName()+".");
+				player.sendMessage("§aTu as mis le grade "+rank.getRank()+"§aà "+target.getName()+".");
 				Ranks.getInstance().setRank(target, rank);
 				return;
 

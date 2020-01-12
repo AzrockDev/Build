@@ -2,7 +2,7 @@ package fr.azrock.me.Ranks;
 
 public enum RankType {
 
-	ADMIN("Admin", "§c", 1), BUILDER("Builder", "§a", 5), AMI("Ami", "§e", 10), PLAYER("", "§7", 15);
+	ADMIN("Admin", "§c", 1), BUILDER("Builder", "§a", 5), AMI("Ami", "§e", 10), PLAYER("Player", "§7", 15);
 	
 	
 	public String rank;

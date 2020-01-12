@@ -1,7 +1,7 @@
 package fr.azrock.me.Utils;
 
 public enum Alert {
-	MESSAGE("§a"), INFO("§e"), CRITICAL("§c"), SEPARATOR("------------");
+	MESSAGE("§a"), INFO("§e"), CRITICAL("§c"), SEPARATOR("------------"), UNKNOWN_COMMAND("Commande inconnue. Fait /help pour obtenir de l'aide.");
 
 
 	private String characters;
@@ -9,7 +9,7 @@ public enum Alert {
 	Alert(String characters) {
 		this.characters = characters;
 	}
-	public String getColor() {
+	public String toString() {
 		return this.characters;
 	}
 }

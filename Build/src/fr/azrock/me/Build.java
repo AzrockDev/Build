@@ -19,9 +19,9 @@ public class Build extends JavaPlugin {
 		ListenersUtils.getInstance().registerListeners(this);
 		
 		RankConfig.getInstance().setupConfig(this);
-		
 		RankCommands rank = new RankCommands();
 		rank.setupCommands();
+		
 		
 	}
 	

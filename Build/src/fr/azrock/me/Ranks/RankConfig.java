@@ -96,9 +96,6 @@ public class RankConfig {
 	public ConfigurationSection getConfigSection(String path) {
 		return config.getConfigurationSection(path);
 	}*/
-	
-	
-	
 	public boolean configSectionExists(String path) {
 		if(this.config.get(path) == null) {
 			return false;
@@ -106,11 +103,14 @@ public class RankConfig {
 		
 		return true;
 	}
+	
+	
+	
 	/*--------------------------------------------------------------------------------
 	 * Create new config section for new players.
 	 * */
 	public void createNewRank(Player player) {
-		this.config.createSection("rankList."+player.getUniqueId());
+		this.config.createSection("rankList."+player.getUniqueId().toString());
 		setPath("rankList."+player.getUniqueId().toString(), RankType.PLAYER.getPower());
 		save();
 	}
