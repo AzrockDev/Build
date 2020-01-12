@@ -9,8 +9,5 @@ commands:
     aliases: grade
   fly:
     description: Fly Command
-  gamemode:
-    description: Gamemode command
-    aliases: gm
   speed:
     description: Speed command

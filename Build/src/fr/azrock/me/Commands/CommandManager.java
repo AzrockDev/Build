@@ -15,12 +15,12 @@ public abstract class CommandManager implements CommandExecutor {
 	
 	
 	private final String command;
-	private final int power;
+	//private final int power;
 	private static JavaPlugin plugin = Build.getPlugin();
 
-	public CommandManager(String command, int power) {
+	public CommandManager(String command) {
 		this.command = command;
-		this.power = power;
+		//this.power = power;
 
 		plugin.getCommand(command).setExecutor(this);
 	}
@@ -28,9 +28,11 @@ public abstract class CommandManager implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 
+		//Player player = (Player)sender;
+		
 		if(!(cmd.getLabel().equalsIgnoreCase(command))) return false;
 
-		//if(!(sender.hasPermission(permision))) return false;
+		//if(Ranks.getInstance().getRankPower(player) > power) return false;
 
 		if(!(sender instanceof Player)) return false;
 

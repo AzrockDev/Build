@@ -1,7 +1,7 @@
 package fr.azrock.me.Utils;
 
 public enum Alert {
-	MESSAGE("Â§a"), INFO("Â§e"), CRITICAL("Â§c"), SEPARATOR("------------");
+	MESSAGE("§a"), INFO("§e"), CRITICAL("§c"), SEPARATOR("------------");
 
 
 	private String characters;

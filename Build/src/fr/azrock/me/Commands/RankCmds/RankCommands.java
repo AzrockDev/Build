@@ -8,18 +8,20 @@ import org.bukkit.entity.Player;
 
 import fr.azrock.me.Commands.CommandManager;
 import fr.azrock.me.Commands.SubCommands;
+import fr.azrock.me.Commands.RankCmds.SubCommands.ListCmd;
+import fr.azrock.me.Commands.RankCmds.SubCommands.SetCmd;
 import fr.azrock.me.Utils.Alert;
 import fr.azrock.me.Utils.MessageUtils;
 
 public class RankCommands extends CommandManager {
 	
 	public RankCommands() {
-		super("Rank", 1);
-		// TODO Auto-generated constructor stub
+		super("Rank");
 	}
 	
 	public void setupCommands() {
-		
+		sCommands.add(new ListCmd());
+		sCommands.add(new SetCmd());
 	}
 	
 	private ArrayList<SubCommands> sCommands = new ArrayList<SubCommands>();
@@ -46,7 +48,7 @@ public class RankCommands extends CommandManager {
 			
 			//Check if argument exists
 			if(cmdArg == null) {
-				player.sendMessage("Â§cCette commande n'existe pas!");
+				player.sendMessage("§cCette commande n'existe pas!");
 				return;
 			}
 			
@@ -57,7 +59,7 @@ public class RankCommands extends CommandManager {
 
 			try {
 				cmdArg.onCommand(player, args);
-			}catch(Exception e) { player.sendMessage("Â§cUne erreur s'est produite!") ;e.printStackTrace(); }
+			}catch(Exception e) { player.sendMessage("§cUne erreur s'est produite!") ;e.printStackTrace(); }
 			
 		}
 	}

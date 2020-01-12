@@ -12,10 +12,6 @@ public class RankListeners implements Listener {
 	public void onJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
 		
-		if(!RankConfig.getInstance().hasConfigSection(player)) {
-			RankConfig.getInstance().createNewPlayerFile(player);
-		}
-		
 		Ranks.getInstance().updateRank(player);
 		
 	}
@@ -24,13 +20,13 @@ public class RankListeners implements Listener {
 	public void onChat(AsyncPlayerChatEvent event) {
 		Player player = event.getPlayer();
 		
-		int rankId = RankConfig.getInstance().getRankID(player);
+		int rankId = Ranks.getInstance().getRankPower(player);
 		RankType rank = Ranks.getInstance().getRankFromId(rankId);
 		
 		if(rankId == 15) {
 			event.setFormat(RankType.PLAYER.getColor()+player.getName()+" : "+event.getMessage());
 		}else {
-			event.setFormat(rank.getRank()+player.getName()+" Â§f: "+event.getMessage());
+			event.setFormat(rank.getRank()+player.getName()+" §f: "+event.getMessage());
 		}
 	}
 	

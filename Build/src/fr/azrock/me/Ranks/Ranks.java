@@ -10,22 +10,51 @@ public class Ranks {
 
 	public HashMap<UUID, Integer> rankMap = new HashMap<UUID, Integer>();
 	
-	
+	/*
+	 * Rank Update Method for a given <player>
+	 * Call method everytime a player joins to set rank if existing or new rank.
+	 * */
 	public void updateRank(Player player) {
+		
+		final String RANK_PATH = "rankList."+player.getUniqueId().toString();
+		
 		
 		if(!rankMap.containsKey(player.getUniqueId())) {
 			
-			int id = RankConfig.getInstance().getRankID(player);
-			
-			rankMap.put(player.getUniqueId(), id);
-			updateRankStyle(player, id);
+			if(!RankConfig.getInstance().configSectionExists(RANK_PATH)) {
+				RankConfig.getInstance().createNewRank(player);
+				
+				int id = RankConfig.getInstance().getFromPath(RANK_PATH);
+				rankMap.put(player.getUniqueId(), id);
+				updateRankStyle(player, id);
+				return;
+				
+				
+			}else {
+				
+				int id = RankConfig.getInstance().getFromPath(RANK_PATH);
+				
+				rankMap.put(player.getUniqueId(), id);
+				updateRankStyle(player, id);
+				return;
+			}
 		}
 	}
 	
 	public void setRank(Player player, RankType rank) {
-		RankConfig.getInstance().setNewRank(player, rank);
+		RankConfig.getInstance().setRank(player, rank);
+		rankMap.put(player.getUniqueId(), rank.getPower());
 		updateRankStyle(player, rank.getPower());
 	}
+	
+	public int getRankPower(Player player) {
+		int id = rankMap.get(player.getUniqueId());
+		return id;
+	}
+	
+	/*public boolean rankExists(RankType rank) {
+		if()
+	}*/
 	
 	
 	
@@ -34,19 +63,18 @@ public class Ranks {
 		switch(rankId) {
 		
 		case 1:
-			player.setPlayerListName(RankType.ADMIN.getRank()+player.getName());
+			player.setPlayerListName(RankType.ADMIN.getRank()+" "+player.getName());
 			
 		case 5:
-			player.setPlayerListName(RankType.BUILDER.getRank()+player.getName());
+			player.setPlayerListName(RankType.BUILDER.getRank()+" "+player.getName());
 			
 		case 10:
-			player.setPlayerListName(RankType.AMI.getRank()+player.getName());
+			player.setPlayerListName(RankType.AMI.getRank()+" "+player.getName());
 			
 		case 15:
 			player.setPlayerListName(RankType.PLAYER.getColor()+player.getName());
 		
 		default:
-			RankConfig.getInstance().setNewRank(player, RankType.PLAYER);
 			player.setPlayerListName(RankType.PLAYER.getColor()+player.getName());
 			
 		}
