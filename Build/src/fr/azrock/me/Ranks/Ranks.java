@@ -45,7 +45,7 @@ public class Ranks {
 		RankConfig.getInstance().setRank(player, rank);
 		rankMap.put(player.getUniqueId(), rank.getPower());
 		updateRankStyle(player, rank.getPower());
-	}
+	} 
 	
 	public int getRankPower(Player player) {
 		int id = rankMap.get(player.getUniqueId());
