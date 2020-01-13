@@ -8,6 +8,8 @@ public class WarpTp extends SubCommands {
 
 	public void onCommand(Player player, String[] args) {
 		
+		
+		
 	}
 
 	@Override
