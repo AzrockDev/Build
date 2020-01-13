@@ -1,4 +1,4 @@
-package fr.azrock.me.Ranks;
+package fr.azrock.me.Ranks.RankManager;
 
 import java.io.File;
 
@@ -6,6 +6,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+
+import fr.azrock.me.Ranks.RankType;
 
 public class RankConfig {
 		

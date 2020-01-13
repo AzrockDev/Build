@@ -7,11 +7,6 @@ commands:
   rank:
     description: Rank Command
     aliases: grade
-  fly:
-    description: Fly Command
-  speed:
-    description: Speed command
-  help:
-    description: Help Command
-  build:
-    description: Build reload command
+  warp:
+    description: Warp Command
+    aliases: warps

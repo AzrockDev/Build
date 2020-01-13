@@ -6,6 +6,8 @@ import java.util.UUID;
 
 import org.bukkit.entity.Player;
 
+import fr.azrock.me.Ranks.RankManager.RankConfig;
+
 
 public class Ranks {
 

@@ -1,11 +1,11 @@
-package fr.azrock.me.Commands.RankCmds.SubCommands;
+package fr.azrock.me.Ranks.Commands.SubCommands;
 
 import org.bukkit.entity.Player;
 
 import fr.azrock.me.Commands.SubCommands;
 import fr.azrock.me.Ranks.RankType;
 
-public class ListCmd extends SubCommands {
+public class RankList extends SubCommands {
 
 	@Override
 	public void onCommand(Player player, String[] args) {

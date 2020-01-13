@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 
-import fr.azrock.me.Ranks.RankListeners;
+import fr.azrock.me.Ranks.RankManager.RankListeners;
 
 public class ListenersUtils {
 

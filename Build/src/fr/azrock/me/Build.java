@@ -3,9 +3,10 @@ package fr.azrock.me;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.azrock.me.Commands.CommandManager;
-import fr.azrock.me.Commands.RankCmds.RankCommands;
-import fr.azrock.me.Ranks.RankConfig;
+import fr.azrock.me.Ranks.Commands.RankCommand;
+import fr.azrock.me.Ranks.RankManager.RankConfig;
 import fr.azrock.me.Utils.ListenersUtils;
+import fr.azrock.me.Warps.Commands.WarpCommand;
 
 public class Build extends JavaPlugin {
 
@@ -19,8 +20,11 @@ public class Build extends JavaPlugin {
 		ListenersUtils.getInstance().registerListeners(this);
 		
 		RankConfig.getInstance().setupConfig(this);
-		RankCommands rank = new RankCommands();
+		RankCommand rank = new RankCommand();
 		rank.setupCommands();
+		
+		WarpCommand warp = new WarpCommand();
+		warp.registerCommands();
 		
 		
 	}

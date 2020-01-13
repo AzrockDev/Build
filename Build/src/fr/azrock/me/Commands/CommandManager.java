@@ -7,12 +7,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.azrock.me.Build;
-import fr.azrock.me.Commands.Cmds.BuildCommand;
-import fr.azrock.me.Commands.Cmds.HelpCommand;
-import fr.azrock.me.Commands.RankCmds.RankCommands;
 import fr.azrock.me.Ranks.Ranks;
+import fr.azrock.me.Ranks.Commands.RankCommand;
 import fr.azrock.me.Utils.Alert;
 import fr.azrock.me.Utils.MessageUtils;
+import fr.azrock.me.Warps.Commands.WarpCommand;
 
 public abstract class CommandManager implements CommandExecutor {
 
@@ -59,8 +58,7 @@ public abstract class CommandManager implements CommandExecutor {
 	
 	public static void registerCommands(JavaPlugin pl) {
 		pl = plugin;
-		new RankCommands();
-		new HelpCommand();
-		new BuildCommand();
+		new RankCommand();
+		new WarpCommand();
 	}
 }

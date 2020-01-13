@@ -15,6 +15,22 @@ public class MessageUtils {
 	
 	
 	
+	public boolean hasCorrectName(String s) {
+		if(s == null) {
+			return false;
+		}
+		for(int i=0; i<s.length(); i++) {
+			if(Character.isLetterOrDigit(s.charAt(i)) == false) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	/*
+	 * =============================================
+	 * */
 	public static MessageUtils getInstance() {
 		return new MessageUtils();
 	}

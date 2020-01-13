@@ -1,4 +1,4 @@
-package fr.azrock.me.Commands.RankCmds.SubCommands;
+package fr.azrock.me.Ranks.Commands.SubCommands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -9,7 +9,7 @@ import fr.azrock.me.Ranks.Ranks;
 import fr.azrock.me.Utils.Alert;
 import fr.azrock.me.Utils.MessageUtils;
 
-public class SetCmd extends SubCommands {
+public class RankSet extends SubCommands {
 
 	@Override
 	public void onCommand(Player player, String[] args) {
