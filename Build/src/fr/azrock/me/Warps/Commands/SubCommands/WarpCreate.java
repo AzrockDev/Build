@@ -2,9 +2,12 @@ package fr.azrock.me.Warps.Commands.SubCommands;
 
 import org.bukkit.entity.Player;
 
-import fr.azrock.me.Commands.SubCommands;
+import fr.azrock.me.CommandHandler.SubCommands;
+import fr.azrock.me.Ranks.RankType;
 import fr.azrock.me.Utils.Alert;
 import fr.azrock.me.Utils.MessageUtils;
+import fr.azrock.me.Warps.Warp;
+import fr.azrock.me.Warps.WarpManager;
 
 public class WarpCreate extends SubCommands {
 
@@ -25,7 +28,15 @@ public class WarpCreate extends SubCommands {
 				return;
 			}
 			
-			//Warp newWarp = new Warp(warpName, player.getLocation(), RankType.AMI.getPower());
+			for(Warp warp : WarpManager.getWarpList()) {
+				if(warp.getName().equalsIgnoreCase(warpName)) {
+					MessageUtils.getInstance().alert(player, Alert.CRITICAL, "Un warp à ce nom existe déjà!");
+					return;
+				}
+			}
+			
+			Warp newWarp = new Warp(warpName, player.getLocation(), RankType.AMI.getPower());
+			newWarp.addWarp();
 			
 			
 		}

@@ -1,4 +1,4 @@
-package fr.azrock.me.Commands;
+package fr.azrock.me.CommandHandler;
 
 import org.bukkit.entity.Player;
 

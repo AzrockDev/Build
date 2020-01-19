@@ -3,7 +3,7 @@ package fr.azrock.me.Ranks.Commands.SubCommands;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-import fr.azrock.me.Commands.SubCommands;
+import fr.azrock.me.CommandHandler.SubCommands;
 import fr.azrock.me.Ranks.RankType;
 import fr.azrock.me.Ranks.Ranks;
 import fr.azrock.me.Utils.Alert;

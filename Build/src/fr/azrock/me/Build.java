@@ -2,7 +2,8 @@ package fr.azrock.me;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.azrock.me.Commands.CommandManager;
+import fr.azrock.me.CommandHandler.CommandManager;
+import fr.azrock.me.ConfigurationFiles.ConfigManager;
 import fr.azrock.me.Ranks.Commands.RankCommand;
 import fr.azrock.me.Ranks.RankManager.RankConfig;
 import fr.azrock.me.Utils.ListenersUtils;
@@ -16,17 +17,29 @@ public class Build extends JavaPlugin {
 	public void onEnable() {
 		instance = this;
 		
+		ConfigManager.checkDataFolder(this);
+		ConfigManager.declareConfigs(this);
+		
 		CommandManager.registerCommands(this);
+		
 		ListenersUtils.getInstance().registerListeners(this);
 		
 		RankConfig.getInstance().setupConfig(this);
+		
+		
+		/*-----------------------------------------------
+		 * Register Main command's SubCommands
+		 * Not required for individual commands.
+		 * */
+		//--- Ranks --
 		RankCommand rank = new RankCommand();
-		rank.setupCommands();
-		
+		rank.registerSubCommands();
+		//--- Warps --
 		WarpCommand warp = new WarpCommand();
-		warp.registerCommands();
+		warp.registerSubCommands();
+		//--- Moderation --
 		
-		
+		/* -------------------------------------------------- */
 	}
 	
 	

@@ -6,8 +6,8 @@ import java.util.Arrays;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import fr.azrock.me.Commands.CommandManager;
-import fr.azrock.me.Commands.SubCommands;
+import fr.azrock.me.CommandHandler.CommandManager;
+import fr.azrock.me.CommandHandler.SubCommands;
 import fr.azrock.me.Utils.Alert;
 import fr.azrock.me.Utils.MessageUtils;
 import fr.azrock.me.Warps.Commands.SubCommands.WarpCreate;
@@ -26,7 +26,7 @@ public class WarpCommand extends CommandManager {
 	}
 
 	
-	public void registerCommands() {
+	public void registerSubCommands() {
 		sCommands.add(new WarpCreate());
 		sCommands.add(new WarpRemove());
 		sCommands.add(new WarpList());

@@ -2,7 +2,7 @@ package fr.azrock.me.Ranks.Commands.SubCommands;
 
 import org.bukkit.entity.Player;
 
-import fr.azrock.me.Commands.SubCommands;
+import fr.azrock.me.CommandHandler.SubCommands;
 import fr.azrock.me.Ranks.RankType;
 
 public class RankList extends SubCommands {

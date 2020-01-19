@@ -6,9 +6,12 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 
+import fr.azrock.me.Warps.Warp;
 
 public abstract class ConfigManager {
 
+	private static Plugin plugin;
+	
 	private FileConfiguration config;
 	private File configFile;
 	
@@ -22,13 +25,9 @@ public abstract class ConfigManager {
 	}
 	
 	
-	protected void setup(Plugin plugin) {
+	public void setup() {
 		
 		boolean noHeading = false;
-		
-		if(!plugin.getDataFolder().exists()) {
-			plugin.getDataFolder().mkdir();
-		}
 		
 		configFile = new File(plugin.getDataFolder(), this.fileName);
 		
@@ -74,6 +73,16 @@ public abstract class ConfigManager {
 	/*--------------------------------------------------------------------------------
 	 * Set new <value> at the <path> in rank config file.
 	 * */
+	public void createPath(String path) {
+		this.config.createSection(path);
+		save();
+	}
+	
+	
+	
+	/*--------------------------------------------------------------------------------
+	 * Set new <value> at the <path> in rank config file.
+	 * */
 	public void setPath(String path, Object value) {
 		this.config.set(path, value);
 		save();
@@ -99,7 +108,19 @@ public abstract class ConfigManager {
 		if(this.config.get(path) == null) {
 			return false;
 		}
-		
 		return true;
+	}
+	
+	
+	
+	public static void checkDataFolder(Plugin plugin) {
+		if(!plugin.getDataFolder().exists()) {
+			plugin.getDataFolder().mkdir();
+		}
+	}
+	
+	public static void declareConfigs(Plugin pl) {
+		pl = plugin;
+		Warp.setup();
 	}
 }

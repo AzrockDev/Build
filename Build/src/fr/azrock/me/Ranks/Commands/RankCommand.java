@@ -6,8 +6,8 @@ import java.util.Arrays;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import fr.azrock.me.Commands.CommandManager;
-import fr.azrock.me.Commands.SubCommands;
+import fr.azrock.me.CommandHandler.CommandManager;
+import fr.azrock.me.CommandHandler.SubCommands;
 import fr.azrock.me.Ranks.Commands.SubCommands.RankList;
 import fr.azrock.me.Ranks.Commands.SubCommands.RankSet;
 import fr.azrock.me.Utils.Alert;
@@ -19,7 +19,7 @@ public class RankCommand extends CommandManager {
 		super("Rank", 1);
 	}
 	
-	public void setupCommands() {
+	public void registerSubCommands() {
 		sCommands.add(new RankList());
 		sCommands.add(new RankSet());
 	}

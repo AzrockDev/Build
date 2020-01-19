@@ -1,4 +1,4 @@
-package fr.azrock.me.Commands;
+package fr.azrock.me.CommandHandler;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -6,7 +6,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.azrock.me.Build;
 import fr.azrock.me.Ranks.Ranks;
 import fr.azrock.me.Ranks.Commands.RankCommand;
 import fr.azrock.me.Utils.Alert;
@@ -20,7 +19,7 @@ public abstract class CommandManager implements CommandExecutor {
 	
 	private final String command;
 	private final int power;
-	private static JavaPlugin plugin = Build.getPlugin();	
+	private static JavaPlugin plugin;
 	
 
 	public CommandManager(String command, int power) {
@@ -57,7 +56,7 @@ public abstract class CommandManager implements CommandExecutor {
 
 	
 	public static void registerCommands(JavaPlugin pl) {
-		pl = plugin;
+		plugin = pl;
 		new RankCommand();
 		new WarpCommand();
 	}
